@@ -49,21 +49,19 @@
       </div>
     </div>
     <div id="buttons">
-      <button class="btn all">All Recipes <img src="./assets/chevron.svg" alt=""></button>
-      <button class="btn veg">Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
-      <button class="btn non-veg">Non Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
+      <button class="btn all" onclick="filterRecipes('all')">All Recipes <img src="./assets/chevron.svg" alt=""></button>
+      <button class="btn veg" onclick="filterRecipes('veg')">Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
+      <button class="btn non-veg" onclick="filterRecipes('non-veg')">Non Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
     </div>
     <div class="cards-and-filter">
       <div class="fiilter">
         <h4>Filters</h4>
         <h5>Rating</h5>
-        <input type="checkbox" name="above-four" id="above">
-        <label for="above-four">4.0 & above</label><br>
-        <input type="checkbox" name="below-four" id="below">
-        <label for="below-four">Below 4</label>
+        <label> <input type="checkbox" id="aboveCheckbox">4.0 & above</label><br>
+        <label><input type="checkbox" id="belowCheckbox">Below 4</label>
       </div>
-      <div class="cards">
-        <div class="card">
+      <div class="cards" id="recipeCards">
+        <!-- <div class="card">
           <img src="https://source.unsplash.com/random?chicken " alt="">
           <div class="card-info">
             <p>Non-Veg</p>
@@ -79,7 +77,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
     </div>
   </section>
 

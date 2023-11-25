@@ -1,4 +1,4 @@
-const restaurants = [
+const recipes = [
   {
       "name": "Veggie Delight",
       "imageSrc": "https://source.unsplash.com/random?veggies",
@@ -121,4 +121,89 @@ const restaurants = [
   }
 ]
 
-console.log(restaurants.length)
+document.addEventListener("DOMContentLoaded", function () {
+    displayRecipes(recipes);
+  });
+
+function displayRecipes(recipes) {
+    // const recipeCardsContainer = document.getElementById("recipeCards");
+    const restaurantsContainer = document.getElementById("recipeCards");
+    
+    // recipeCardsContainer.innerHTML = "";
+  
+    recipes.map(recipe => {
+  // Create a new div element with the class "card"
+  const cardDiv = document.createElement("div");
+  cardDiv.className = "card";
+
+  // Create an image element with the specified source and alt text
+  const imgElement = document.createElement("img");
+  imgElement.src = recipe.imageSrc;
+
+  // Create a div element with the class "card-info"
+  const cardInfoDiv = document.createElement("div");
+  cardInfoDiv.className = "card-info";
+
+  // Create a paragraph element with the restaurant type
+  const typeParagraph = document.createElement("p");
+  typeParagraph.textContent = recipe.type;
+
+  // Create a div element with the class "food-name"
+  const foodNameDiv = document.createElement("div");
+  foodNameDiv.className = "food-name";
+
+  // Create an h4 element with the restaurant name
+  const foodNameHeading = document.createElement("h4");
+  foodNameHeading.textContent = recipe.name;
+
+  // Create a paragraph element with the class "rating" and the restaurant rating
+  const ratingParagraph = document.createElement("p");
+  ratingParagraph.className = "rating";
+  ratingParagraph.innerHTML = `<img src="./assets/Frame 28.svg" alt="">${recipe.rating}`;
+
+  // Append the heading and rating paragraph to the foodNameDiv
+  foodNameDiv.appendChild(foodNameHeading);
+  foodNameDiv.appendChild(ratingParagraph);
+
+  // Create a div element with the class "time"
+  const timeDiv = document.createElement("div");
+  timeDiv.className = "time";
+
+  // Create a paragraph element with the restaurant preparation time
+  const timeParagraph = document.createElement("p");
+  timeParagraph.textContent = recipe.time;
+
+  // Create a div element for like and comments images
+  const actionsDiv = document.createElement("div");
+
+  // Create two image elements with the sources "./assets/like.svg" and "./assets/comments.svg", and alt text ""
+  const likeImage = document.createElement("img");
+  likeImage.src = "./assets/like.svg";
+  likeImage.alt = "";
+
+  const commentsImage = document.createElement("img");
+  commentsImage.src = "./assets/comments.svg";
+  commentsImage.alt = "";
+
+  // Append the like and comments images to the actionsDiv
+  actionsDiv.appendChild(likeImage);
+  actionsDiv.appendChild(commentsImage);
+
+  // Append the timeParagraph and actionsDiv to the timeDiv
+  timeDiv.appendChild(timeParagraph);
+  timeDiv.appendChild(actionsDiv);
+
+  // Append the imgElement, typeParagraph, foodNameDiv, and timeDiv to the cardInfoDiv
+  cardInfoDiv.appendChild(imgElement);
+  cardInfoDiv.appendChild(typeParagraph);
+  cardInfoDiv.appendChild(foodNameDiv);
+  cardInfoDiv.appendChild(timeDiv);
+
+  // Append the cardInfoDiv to the cardDiv
+  cardDiv.appendChild(cardInfoDiv);
+
+  // Append the cardDiv to the restaurantsContainer
+  restaurantsContainer.appendChild(cardDiv);
+});
+  }
+  
