@@ -1,10 +1,10 @@
-const recipes = [
+let recipes = [
   {
       "name": "Veggie Delight",
       "imageSrc": "https://source.unsplash.com/random?veggies",
       "time": "30 min",
       "type": "Veg",
-      "isLiked": false,
+      "isLiked": true,
       "rating": 4.2
   },
   {
@@ -126,84 +126,123 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 function displayRecipes(recipes) {
-    // const recipeCardsContainer = document.getElementById("recipeCards");
+
     const restaurantsContainer = document.getElementById("recipeCards");
     
-    // recipeCardsContainer.innerHTML = "";
+    restaurantsContainer.innerHTML = "";
   
     recipes.map(recipe => {
-  // Create a new div element with the class "card"
-  const cardDiv = document.createElement("div");
-  cardDiv.className = "card";
+  
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "card";
 
-  // Create an image element with the specified source and alt text
-  const imgElement = document.createElement("img");
-  imgElement.src = recipe.imageSrc;
+        const imgElement = document.createElement("img");
+        imgElement.src = recipe.imageSrc;
 
-  // Create a div element with the class "card-info"
-  const cardInfoDiv = document.createElement("div");
-  cardInfoDiv.className = "card-info";
+        const cardInfoDiv = document.createElement("div");
+        cardInfoDiv.className = "card-info";
 
-  // Create a paragraph element with the restaurant type
-  const typeParagraph = document.createElement("p");
-  typeParagraph.textContent = recipe.type;
+        const typeParagraph = document.createElement("p");
+        typeParagraph.textContent = recipe.type;
 
-  // Create a div element with the class "food-name"
-  const foodNameDiv = document.createElement("div");
-  foodNameDiv.className = "food-name";
+        const foodNameDiv = document.createElement("div");
+        foodNameDiv.className = "food-name";
 
-  // Create an h4 element with the restaurant name
-  const foodNameHeading = document.createElement("h4");
-  foodNameHeading.textContent = recipe.name;
+        const foodNameHeading = document.createElement("h4");
+        foodNameHeading.textContent = recipe.name;
 
-  // Create a paragraph element with the class "rating" and the restaurant rating
-  const ratingParagraph = document.createElement("p");
-  ratingParagraph.className = "rating";
-  ratingParagraph.innerHTML = `<img src="./assets/Frame 28.svg" alt="">${recipe.rating}`;
+        const ratingParagraph = document.createElement("p");
+        ratingParagraph.className = "rating";
+        ratingParagraph.innerHTML = `<img src="./assets/star.svg" alt="">${recipe.rating}`;
 
-  // Append the heading and rating paragraph to the foodNameDiv
-  foodNameDiv.appendChild(foodNameHeading);
-  foodNameDiv.appendChild(ratingParagraph);
+        foodNameDiv.appendChild(foodNameHeading);
+        foodNameDiv.appendChild(ratingParagraph);
 
-  // Create a div element with the class "time"
-  const timeDiv = document.createElement("div");
-  timeDiv.className = "time";
+        const timeDiv = document.createElement("div");
+        timeDiv.className = "time";
 
-  // Create a paragraph element with the restaurant preparation time
-  const timeParagraph = document.createElement("p");
-  timeParagraph.textContent = recipe.time;
+        const timeParagraph = document.createElement("p");
+        timeParagraph.textContent = recipe.time;
 
-  // Create a div element for like and comments images
-  const actionsDiv = document.createElement("div");
+        const actionsDiv = document.createElement("div");
 
-  // Create two image elements with the sources "./assets/like.svg" and "./assets/comments.svg", and alt text ""
-  const likeImage = document.createElement("img");
-  likeImage.src = "./assets/like.svg";
-  likeImage.alt = "";
+        const likeImage = document.createElement("img");
+        if(recipe.isLiked===true){
+            likeImage.src = "./assets/likeed.svg";
+        }
+        else{
+            likeImage.src = "./assets/like.svg";
+        }
+        
+        likeImage.setAttribute('data-dish',`${recipe.name}`);
+        likeImage.addEventListener("click", (event) => toggleLike(event));
 
-  const commentsImage = document.createElement("img");
-  commentsImage.src = "./assets/comments.svg";
-  commentsImage.alt = "";
+        const commentsImage = document.createElement("img");
+        commentsImage.src = "./assets/comments.svg";
 
-  // Append the like and comments images to the actionsDiv
-  actionsDiv.appendChild(likeImage);
-  actionsDiv.appendChild(commentsImage);
+        actionsDiv.appendChild(likeImage);
+        actionsDiv.appendChild(commentsImage);
 
-  // Append the timeParagraph and actionsDiv to the timeDiv
-  timeDiv.appendChild(timeParagraph);
-  timeDiv.appendChild(actionsDiv);
+        timeDiv.appendChild(timeParagraph);
+        timeDiv.appendChild(actionsDiv);
 
-  // Append the imgElement, typeParagraph, foodNameDiv, and timeDiv to the cardInfoDiv
-  cardInfoDiv.appendChild(imgElement);
-  cardInfoDiv.appendChild(typeParagraph);
-  cardInfoDiv.appendChild(foodNameDiv);
-  cardInfoDiv.appendChild(timeDiv);
+        cardInfoDiv.appendChild(imgElement);
+        cardInfoDiv.appendChild(typeParagraph);
+        cardInfoDiv.appendChild(foodNameDiv);
+        cardInfoDiv.appendChild(timeDiv);
 
-  // Append the cardInfoDiv to the cardDiv
-  cardDiv.appendChild(cardInfoDiv);
+        cardDiv.appendChild(cardInfoDiv);
 
-  // Append the cardDiv to the restaurantsContainer
-  restaurantsContainer.appendChild(cardDiv);
+        restaurantsContainer.appendChild(cardDiv);
 });
   }
+  
+  function toggleLike(e) {
+    const dish = e.target.getAttribute('data-dish');
+    const index = recipes.findIndex((recipe) => recipe.name === dish);
+    // console.log(recipes[index])
+    if(recipes[index].isLiked===true){
+        recipes[index].isLiked=false;
+        e.target.src = "./assets/like.svg";
+    }
+    else{
+        recipes[index].isLiked=true;
+        e.target.src = "./assets/likeed.svg";
+    }
+  }
+
+
+  function filterRecipes(filter) {
+    let filteredRecipes = [];
+    switch (filter) {
+      case "all":
+        filteredRecipes = recipes;
+        break;
+      case "veg":
+        filteredRecipes = recipes.filter((recipe) => recipe.type === "Veg");
+        console.log(filteredRecipes)
+        break;
+      case "non-veg":
+        filteredRecipes = recipes.filter((recipe) => recipe.type === "Non-Veg");
+        break;
+      default:
+        filteredRecipes = recipes;
+    }
+        
+    // Rating Filter
+    const aboveCheckbox = document.getElementById("aboveCheckbox");
+    const belowCheckbox = document.getElementById("belowCheckbox");
+
+    if (aboveCheckbox.checked) {
+        filteredRecipes = filteredRecipes.filter((recipe) => recipe.rating > 4.0);
+    }
+
+    if (belowCheckbox.checked) {
+        filteredRecipes = filteredRecipes.filter((recipe) => recipe.rating < 4.0);
+    }
+
+    displayRecipes(filteredRecipes);
+  }
+
+
   

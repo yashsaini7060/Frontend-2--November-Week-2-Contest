@@ -57,11 +57,12 @@
       <div class="fiilter">
         <h4>Filters</h4>
         <h5>Rating</h5>
-        <label> <input type="checkbox" id="aboveCheckbox">4.0 & above</label><br>
-        <label><input type="checkbox" id="belowCheckbox">Below 4</label>
+        <label> <input type="checkbox" id="aboveCheckbox" onclick="filterRecipes()">4.0 & above</label><br>
+        <label><input type="checkbox" id="belowCheckbox" onclick="filterRecipes()">Below 4</label>
       </div>
       <div class="cards" id="recipeCards">
-        <!-- <div class="card">
+
+        <div class="card" onClick="toggleLike(event)"> 
           <img src="https://source.unsplash.com/random?chicken " alt="">
           <div class="card-info">
             <p>Non-Veg</p>
@@ -71,13 +72,14 @@
             </div>
             <div class="time">
               <p>30 mins</p>
-              <div>
+              <div onClick="toggleLike(event)">
                 <img src="./assets/like.svg" alt="">
                 <img src="./assets/comments.svg" alt="">
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
+
     </div>
   </section>
 
