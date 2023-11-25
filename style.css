@@ -22,6 +22,9 @@ nav{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 16rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 nav ul{
@@ -264,4 +267,8 @@ label{
 .time div img{
   margin-right: 0.5rem;
   height: 65%; 
+}
+
+footer{
+
 }

@@ -123,6 +123,8 @@ let recipes = [
 
 document.addEventListener("DOMContentLoaded", function () {
     displayRecipes(recipes);
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", () => handleSearch());
   });
 
 function displayRecipes(recipes) {
@@ -197,6 +199,21 @@ function displayRecipes(recipes) {
 });
   }
   
+
+
+  function handleSearch() {
+    // Get the search query from the input
+    const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+
+    // Filter recipes based on the search query
+    const filteredRecipes = recipes.filter((recipe) =>
+        recipe.name.toLowerCase().includes(searchQuery)
+    );
+
+    // Display the filtered recipes
+    displayRecipes(filteredRecipes);
+}
+
   function toggleLike(e) {
     const dish = e.target.getAttribute('data-dish');
     const index = recipes.findIndex((recipe) => recipe.name === dish);
