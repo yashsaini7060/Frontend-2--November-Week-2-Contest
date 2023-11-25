@@ -51,12 +51,12 @@ nav ul  li a {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .heading img{
   position: relative;
-  width: 80%;
-  height: 25rem;
+  width: 70%;
+  height: 20rem;
   border-radius: 20px;
   object-fit: cover;
 }
@@ -64,8 +64,8 @@ nav ul  li a {
 .branding{
   font-size: 1.6rem;
   position: absolute;
-  left:15%;
-  top:10%;
+  left:20%;
+  top:6.5%;
   margin-top: 4rem;
   color: white;
 }
@@ -84,7 +84,7 @@ nav ul  li a {
 }
 
 .main{
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +92,7 @@ nav ul  li a {
 }
 
 .search{
-  width: 80%;
+  width: 70%;
 }
 
 .search h3{
@@ -104,10 +104,12 @@ nav ul  li a {
   display: flex;
   width: 100%;
 }
-
+.search-bar div:first-child{
+  width: calc(100% - 5rem);
+}
 .search-bar input {
   height: 4rem;
-  width: 80rem; 
+  width: 100%;
   background-color: #F3F3F3;
   border: none;
   font-size: 1.2rem;
@@ -123,7 +125,8 @@ nav ul  li a {
   justify-content: center; /* Align horizontally center */
   height: 4rem;
   width: 5rem;
-  background-color: #DC582A;
+  background-color: #509E2F;
+
   border: none;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
@@ -131,3 +134,123 @@ nav ul  li a {
   color: white;
   cursor: pointer;
 } 
+
+#buttons {
+  display: flex;
+  width: 70%;
+  margin-top: 1.5rem; 
+}
+
+.btn {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 18rem;
+  height: 5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color:#EAAA00;
+  color: white;
+}
+
+#buttons img {
+  margin-left: 0.5rem; /* Add some margin between button text and the image */
+}
+.veg{
+  background-color: #C4D600;
+}
+.non-veg{
+  background-color:#DC582A;
+}
+
+.cards-and-filter{
+  display: flex;
+  width: 70%;
+  margin-top: 2rem;
+}
+.fiilter{
+  width: 20%;
+  padding: 2rem;
+}
+
+.fiilter h4{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.fiilter h5{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+
+label{
+  font-size: 1.2rem;
+}
+
+.cards{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card img{
+  border-radius: 0.4rem;
+}
+
+.card-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-info p{
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: #A1A1A1;
+}
+.food-name, .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.food-name h4{
+  font-size: 1.3rem;
+}
+
+.rating{
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1rem !important;
+  color: #A1A1A1;
+}
+.rating img{
+  margin-right: 0.5rem;
+  /* height: 65%;  */
+}
+
+.time p{
+  font-size: 1rem !important;
+  color: #DC582A;
+  ;
+}

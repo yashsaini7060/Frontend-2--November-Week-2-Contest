@@ -46,8 +46,41 @@
       <div class="search-bar">
         <div><input type="text" placeholder="Search for recipes"></div>
         <div class="search-btn"><img src="./assets/li_search.svg" alt=""></div>
+      </div>
     </div>
-
+    <div id="buttons">
+      <button class="btn all">All Recipes <img src="./assets/chevron.svg" alt=""></button>
+      <button class="btn veg">Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
+      <button class="btn non-veg">Non Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
+    </div>
+    <div class="cards-and-filter">
+      <div class="fiilter">
+        <h4>Filters</h4>
+        <h5>Rating</h5>
+        <input type="checkbox" name="above-four" id="above">
+        <label for="above-four">4.0 & above</label><br>
+        <input type="checkbox" name="below-four" id="below">
+        <label for="below-four">Below 4</label>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <img src="https://source.unsplash.com/random?chicken " alt="">
+          <div class="card-info">
+            <p>Non-Veg</p>
+            <div class="food-name">
+              <h4>Chicken Biryani</h4>            
+              <p class="rating"><img src="./assets/Frame 28.svg" alt="">4.5</p>
+            </div>
+            <div class="time">
+              <p>30 mins</p>
+              <div>
+                <img src="./assets/like.svg" alt="">
+                <img src="./assets/comments.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </section>
 
 </body>
