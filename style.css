@@ -270,5 +270,79 @@ label{
 }
 
 footer{
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
+.top, .bottom{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 10%;
+}
+
+.logo-footer{
+  margin-bottom: 1.5rem;
+}
+.top div:first-child{
+  width: 25%;
+  font-size: 1rem;
+}
+
+.links{
+  width: 15%;
+  font-size: 1.2rem;
+}
+.links h4{
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.links ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.links ul li{
+  margin-bottom: 0.4rem;
+}
+
+.email{
+  width: 25%; 
+}
+
+.subscribe{
+  width: 100% ;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.subscribe input{
+  height: 3rem;
+  width: 70%;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  border-radius: 1px;
+  border-radius: 4px;
+}
+
+.subscribe button{
+  width: 25%;
+  height: 3rem;
+  font-size: 1rem;
+  vertical-align: top;
+  background: #509E2F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 0.8rem;
+}
+
