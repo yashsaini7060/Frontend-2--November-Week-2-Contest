@@ -175,13 +175,13 @@ function displayRecipes(recipes) {
         else{
             likeImage.src = "./assets/like.svg";
         }
-        
+        likeImage.classList.add("like");
         likeImage.setAttribute('data-dish',`${recipe.name}`);
         likeImage.addEventListener("click", (event) => toggleLike(event));
 
         const commentsImage = document.createElement("img");
         commentsImage.src = "./assets/comments.svg";
-
+        commentsImage.classList.add("comment");
         actionsDiv.appendChild(likeImage);
         actionsDiv.appendChild(commentsImage);
 
@@ -262,4 +262,12 @@ function displayRecipes(recipes) {
   }
 
 
+  function w3_open() {
+    document.getElementById("sidebar").style.display = "flex";
+  }
   
+  function w3_close(e) {
+    if(e.target.id !== "side-nav-btn"){
+        document.getElementById("sidebar").style.display = "none";
+    }
+  }

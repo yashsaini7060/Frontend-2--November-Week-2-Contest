@@ -14,19 +14,84 @@ html , body{
 html{
   font-size: 100%;
 }
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+
+.side-nav{
+  display: none;
+  justify-content: start;
+  align-items: center;
+}
+.menu img{
+  width: 2rem;
+}
+
+.logo{
+  width: 6rem;
+  margin-right: 1rem;
+  margin-left: 2rem;
+}
+
+.sidebar{
+  width: 30%;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  background-color: white;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.side-nav-links li{
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.side-nav-links li a{
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.active{
+  color: #509E2F !important;
+}
+
+.sidebar div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.sidebar div img{
+  height: 5rem;
+}
 
 nav{
-  min-width: 100%;
+  width: 120rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 16rem;
+  padding: 1rem 0rem;
   position: sticky;
   top: 0;
   background-color: white;
 }
 
+
+.nav-logo{
+  width: 6rem;
+}
+
+.person{
+  width: 3rem
+}
 nav ul{
   display: flex;
   justify-content: center;
@@ -58,7 +123,7 @@ nav ul  li a {
 }
 .heading img{
   position: relative;
-  width: 70%;
+  width: 120rem;
   height: 20rem;
   border-radius: 20px;
   object-fit: cover;
@@ -95,7 +160,7 @@ nav ul  li a {
 }
 
 .search{
-  width: 70%;
+  width: 120rem;
 }
 
 .search h3{
@@ -106,6 +171,10 @@ nav ul  li a {
 .search-bar{
   display: flex;
   width: 100%;
+}
+
+.search-img{
+  width: 40%;
 }
 .search-bar div:first-child{
   width: calc(100% - 5rem);
@@ -140,7 +209,7 @@ nav ul  li a {
 
 #buttons {
   display: flex;
-  width: 70%;
+  width: 120rem;
   margin-top: 1.5rem; 
 }
 
@@ -159,6 +228,9 @@ nav ul  li a {
   color: white;
 }
 
+.arrow{
+  width: 15% !important;
+}
 #buttons img {
   margin-left: 0.5rem; /* Add some margin between button text and the image */
 }
@@ -171,7 +243,7 @@ nav ul  li a {
 
 .cards-and-filter{
   display: flex;
-  width: 70%;
+  width: 120rem;
   margin-top: 2rem;
 }
 .fiilter{
@@ -268,6 +340,9 @@ label{
   margin-right: 0.5rem;
   height: 65%; 
 }
+.like, .comment{
+  height: 1.3rem !important;
+}
 
 footer{
   display: flex;
@@ -277,7 +352,7 @@ footer{
   margin-top: 5rem;
 }
 .top, .bottom{
-  width: 70%;
+  width: 120rem;
   display: flex;
   justify-content: space-between;
 }
@@ -288,6 +363,7 @@ footer{
 }
 
 .logo-footer{
+  width: 6rem;
   margin-bottom: 1.5rem;
 }
 .top div:first-child{
@@ -330,14 +406,14 @@ footer{
   width: 70%;
   font-size: 1rem;
   padding-left: 0.5rem;
-  border-radius: 1px;
+  border: 2px solid black;
   border-radius: 4px;
 }
 
 .subscribe button{
   width: 25%;
   height: 3rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   vertical-align: top;
   background: #509E2F;
   color: white;
@@ -345,4 +421,120 @@ footer{
   border-radius: 8px;
   margin-left: 0.8rem;
 }
+.social{
+  width: 2rem;
+}
 
+@media (max-width: 1950px){
+  html{
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 1600px){
+  html{
+    font-size: 70%;
+  }
+  .branding {
+    top: 5%;
+  }
+} 
+@media (max-width: 1400px){
+  html{
+    font-size: 60%;
+  }
+
+} 
+
+@media (max-width: 1200px){
+  html{
+    font-size: 50%;
+  }
+  .branding {
+    top: 4%;
+  }
+} 
+
+@media (max-width: 1000px){
+  html{
+    font-size: 40%;
+  }
+  /* search-btn img{
+    width: 10px !important;
+  } */
+  .branding {
+    top: 3%;
+  }
+} 
+
+@media (max-width: 800px){
+  html{
+    font-size: 35%;
+  }
+
+  .branding {
+    top: 3%;
+    left: 15%;
+  }
+  .cards-and-filter{
+    flex-direction: column;
+  }
+  .fiilter{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+  }
+  .fiilter h4{
+    display: none;
+  }
+
+  #aboveCheckbox, #belowCheckbox{
+    width: 2rem;
+  }
+  .cards{
+    width: 100%;
+  }
+  .card{
+    width: 28%;
+  }
+ 
+} 
+
+@media (max-width: 700px){
+
+  html{
+    font-size: 50%;
+  }
+  .horizontal-nav{
+    display: none;
+  }
+  .side-nav{
+    display: flex;
+  }
+
+  nav, .heading img, .search, #buttons , .cards-and-filter, .top {
+    width: 80%;
+  }
+
+  .cards{
+    justify-content: space-around;
+  }
+  .card{
+    width: 48%;
+  }
+  .top div:first-child {
+    width: 100%;
+  }
+  .links, .email{
+    display: none;
+  }
+}
+
+@media (max-width: 600px){
+  .sidebar div{
+    margin-bottom: 5rem;
+  }
+  .sidebar div img {
+    height: 4rem;
+  }
+}

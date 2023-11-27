@@ -6,10 +6,10 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
-<body>
-  <nav> 
+<body onclick="w3_close(event)">
+  <nav class="horizontal-nav"> 
     <div class="logo">
-      <img src="./assets/Cookpal 1.svg" alt="">
+      <img class="nav-logo" src="./assets/Cookpal 1.svg" alt="">
     </div>
     <ul class="nav-links">
       <li>
@@ -22,15 +22,35 @@
         <a href="#">Help</a>
       </li>
       <li>
-        <img src="./assets/Profile.svg" alt="">
+        <img class="person" src="./assets/Profile.svg" alt="">
       </li>
     </ul>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+  </nav>
+  <nav class="side-nav" onclick="w3_open()">
+    <div class="menu">
+      <img id="side-nav-btn" src="./assets/menu.svg" alt="">
+    </div>
+    <div class="logo">
+      <img class="nav-logo" src="./assets/Cookpal 1.svg" alt="">
     </div>
   </nav>
+  <div class="sidebar" id="sidebar">
+    <div>
+      <img src="./assets/Cookpal 1.svg" alt=""> 
+      <img src="./assets/Profile.svg" alt="">       
+    </div>
+    <ul class="side-nav-links">
+      <li>
+        <a class="active" href="#">Home</a>
+      </li>
+      <li>
+        <a href="#">Explore</a>
+      </li>
+      <li>
+        <a href="#">Help</a>
+      </li>
+    </ul>
+  </div>
   <section class="heading">
     <img src="./assets/Rectangle 20.svg" alt="">
     <div class="branding">
@@ -45,13 +65,13 @@
       <h3>Search For Recipes</h3>
       <div class="search-bar">
         <div><input type="text" placeholder="Search for recipes" id="searchInput"></div>
-        <div class="search-btn"><img src="./assets/li_search.svg" alt=""></div>
+        <div class="search-btn"><img  class="search-img" src="./assets/li_search.svg" alt=""></div>
       </div>
     </div>
     <div id="buttons">
-      <button class="btn all" onclick="filterRecipes('all')">All Recipes <img src="./assets/chevron.svg" alt=""></button>
-      <button class="btn veg" onclick="filterRecipes('veg')">Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
-      <button class="btn non-veg" onclick="filterRecipes('non-veg')">Non Veg Recipes Only <img src="./assets/chevron.svg" alt=""></button>
+      <button class="btn all" onclick="filterRecipes('all')">All Recipes <img class="arrow" src="./assets/chevron.svg" alt=""></button>
+      <button class="btn veg"  onclick="filterRecipes('veg')">Veg Recipes Only <img class="arrow" src="./assets/chevron.svg" alt=""></button>
+      <button class="btn non-veg" onclick="filterRecipes('non-veg')">Non Veg Recipes Only <img class="arrow" src="./assets/chevron.svg" alt=""></button>
     </div>
     <div class="cards-and-filter">
       <div class="fiilter">
@@ -118,10 +138,10 @@
       </div>
     </div>
     <div class="bottom">
-      <img src="./assets/Instagram.svg" alt="">
-      <img src="./assets/Twitter.svg" alt="">
-      <img src="./assets/Linkedin.svg" alt="">
-      <img src="./assets/Facebook.svg" alt="">
+      <img class="social" src="./assets/Instagram.svg" alt="">
+      <img class="social" src="./assets/Twitter.svg" alt="">
+      <img class="social" src="./assets/Linkedin.svg" alt="">
+      <img class="social" src="./assets/Facebook.svg" alt="">
     </div>
   </footer>
 </body>
